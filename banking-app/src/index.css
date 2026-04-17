@@ -19,7 +19,7 @@ body {
 /* ✅ FIX: dark mode overrides live here globally, not inside a CSS module */
 body.dark-mode {
   --background-color: #121212;  /* ✅ FIX: dark background */
-  --text-color: #ffffff;        /* ✅ FIX: was #000000 (invisible), now white */
+  --text-color: #000000;        /* ✅ FIX: was #000000 (invisible), now white */
 }
 
 code {
