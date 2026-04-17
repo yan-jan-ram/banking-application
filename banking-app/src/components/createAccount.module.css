@@ -1,0 +1,63 @@
+.create {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.sideHeading {
+  color: cornflowerblue;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 250px;
+  padding: 25px;
+  color: wheat;
+  background-color: black;
+  border: 2px solid wheat;
+  border-radius: 10px;
+}
+
+.card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card div {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  background-color: wheat;
+  color: black;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: large;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: darkorange;
+}
+
+input {
+  width: 200px;
+  height: 30px;
+  background-color: whitesmoke;
+}

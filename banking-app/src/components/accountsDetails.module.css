@@ -1,0 +1,175 @@
+.mainHeading {
+  color: rgb(229, 181, 118);
+  text-align: center;
+  margin: 20px 0;
+}
+
+.section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sideHeading {
+  color: rgb(79, 79, 218);
+  text-align: center;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchInput {
+  width: 200px;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 2px solid rgb(229, 181, 118);
+}
+
+.fetchButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.fetchButton button {
+  flex: 1 1 40%;
+  max-width: fit-content;
+  height: 40px;
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accountsTable {
+  width: 100%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  font-size: 1em;
+  font-family: Arial, sans-serif;
+  overflow-x: auto;
+}
+
+thead tr {
+  background-color: #007bff;
+  color: #ffffff;
+  text-align: center;
+}
+
+thead th,
+tbody td {
+  padding: 12px 15px;
+  border: 1px solid #dddddd;
+  text-align: center;
+}
+
+tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even) {
+  background-color: #cce5ff;
+}
+
+tbody tr:nth-of-type(odd) {
+  background-color: #e9f2ff;
+}
+
+tbody tr:last-of-type {
+  border-bottom: 2px solid #007bff;
+}
+
+tbody tr:hover {
+  background-color: #0056b3;
+  color: whitesmoke;
+}
+
+.delete,
+.update,
+.deposit,
+.withdraw {
+  flex: 1 1 40%;
+  max-width: fit-content;
+  height: 40px;
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.update {
+  background-color: darkorange;
+}
+
+.delete {
+  background-color: #e04f4b;
+}
+
+.delete:hover,
+.update:hover,
+.deposit:hover,
+.withdraw:hover {
+  background-color: #e04f4b;
+  color: whitesmoke;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.5), 0 0 20px rgba(255, 255, 0, 0.3);
+}
+
+.update:hover {
+  background-color: darkorange;
+}
+
+.deposit,
+.withdraw {
+  background-color: cornflowerblue;
+}
+
+.deposit:hover,
+.withdraw:hover {
+  background-color: cornflowerblue;
+}
+
+@media (max-width: 768px) {
+  .section {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .accountsTable {
+    font-size: 0.8em;
+  }
+
+  .buttons button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .delete,
+  .update,
+  .deposit,
+  .withdraw {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
