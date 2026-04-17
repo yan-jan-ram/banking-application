@@ -1,0 +1,40 @@
+.mainHeading {
+  color: rgb(229, 181, 118);
+  text-align: center;
+  margin: 20px 0;
+  font-size: calc(1.5 * 32px);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.buttons button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid darkmagenta;
+  color: darkmagenta;
+  background-color: transparent;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.buttons button:hover {
+  background-color: darkmagenta;
+  color: #ffffff;
+}
+
+.welcome {
+  color: blue;
+  text-align: center;
+  margin: 20px 0;
+}

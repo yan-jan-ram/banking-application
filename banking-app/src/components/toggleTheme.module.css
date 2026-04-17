@@ -1,0 +1,26 @@
+.toggleButton {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .toggleButton {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+}
+
+.toggleButton:hover {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #333333;
+}
+
+body.dark-mode .toggleButton:hover {
+  background-color: #dddddd;
+  color: #000000;
+  border: 1px solid #dddddd;
+}
