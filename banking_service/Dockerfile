@@ -1,11 +1,18 @@
+# Stage 1: Build
+FROM maven:3.9.6-eclipse-temurin-17 AS build
+
+WORKDIR /app
+COPY . .
+
+RUN mvn clean package -DskipTests
+
+# Stage 2: Run
 FROM eclipse-temurin:17-jdk
 
 WORKDIR /app
 
-COPY . .
+COPY --from=build /app/target/*.jar app.jar
 
-RUN chmod +x mvnw
+EXPOSE 8081
 
-RUN ./mvnw clean package -DskipTests
-
-CMD ["java", "-jar", "target/*.jar"]
+CMD ["java", "-jar", "app.jar"]
