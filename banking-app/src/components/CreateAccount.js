@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./createAccount.module.css";
+import BASE_URL from "./api/config";
 
 const CreateAccount = ({ accounts, setAccounts }) => {
   const [holderName, setHolderName] = useState("");
@@ -13,7 +14,7 @@ const CreateAccount = ({ accounts, setAccounts }) => {
     if (holderName && balance) {
       setIsSubmitting(true);
 
-      fetch("http://localhost:8081/api/accounts/create", {
+      fetch(`${BASE_URL}/api/accounts/create`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

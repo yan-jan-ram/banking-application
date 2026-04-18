@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./transactionHistory.module.css";
+import BASE_URL from "./api/config";
 
 const TransactionHistory = () => {
   const [transactions, setTransactions] = useState([]);
@@ -8,7 +9,7 @@ const TransactionHistory = () => {
   const navigate = useNavigate();
 
   const fetchAllTransactions = useCallback(() => {
-    fetch("http://localhost:8081/api/accounts/transaction_history", {
+    fetch(`${BASE_URL}/api/accounts/transaction_history`, {
       method: "GET",
     })
       .then((response) => {
@@ -44,7 +45,7 @@ const TransactionHistory = () => {
     e.preventDefault();
     if (searchAccountId) {
       fetch(
-        `http://localhost:8081/api/accounts/transactions/${searchAccountId}`,
+        `${BASE_URL}/api/accounts/transactions/${searchAccountId}`,
         {
           method: "GET",
         }

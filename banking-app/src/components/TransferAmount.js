@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./transferAmount.module.css";
+import BASE_URL from "./api/config";
 
 const TransferAmount = ({ accounts, setAccounts }) => {
   const [fromAccountId, setFromAccountId] = useState(1);
@@ -61,7 +62,7 @@ const TransferAmount = ({ accounts, setAccounts }) => {
 
     setIsSubmitting(true);
 
-    fetch("http://localhost:8081/api/accounts/transfer", {
+    fetch(`${BASE_URL}/api/accounts/transfer`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -85,7 +86,6 @@ const TransferAmount = ({ accounts, setAccounts }) => {
         return response.json();
       })
       .then((updatedAccounts) => {
-        // ✅ FIX 2: backend returns List<AccountDTO> (a plain array), not an object with fromAccount/toAccount
         setAccounts(
           accounts.map((account) => {
             const updated = updatedAccounts.find(

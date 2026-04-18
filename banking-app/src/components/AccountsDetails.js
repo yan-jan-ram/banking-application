@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./accountsDetails.module.css";
+import BASE_URL from "./api/config.js";
 
 const AccountsDetails = ({ accounts, setAccounts }) => {
   const [searchAccountId, setSearchAccountId] = useState("");
@@ -8,7 +9,7 @@ const AccountsDetails = ({ accounts, setAccounts }) => {
 
   useEffect(() => {
     const fetchAccounts = () => {
-      fetch("http://localhost:8081/api/accounts/getAll", { method: "GET" })
+      fetch(`${BASE_URL}/api/accounts/getAll`, { method: "GET" })
         .then((response) => {
           if (!response.ok) {
             if (response.status === 400) {
@@ -40,7 +41,7 @@ const AccountsDetails = ({ accounts, setAccounts }) => {
   const getAccountById = (e) => {
     e.preventDefault();
     if (searchAccountId) {
-      fetch(`http://localhost:8081/api/accounts/get/${searchAccountId}`, {
+      fetch(`${BASE_URL}/api/accounts/get/${searchAccountId}`, {
         method: "GET",
       })
         .then((response) => {
@@ -78,7 +79,7 @@ const AccountsDetails = ({ accounts, setAccounts }) => {
 
   const handleSearchReset = () => {
     const fetchAccounts = () => {
-      fetch("http://localhost:8081/api/accounts/getAll", { method: "GET" })
+      fetch(`${BASE_URL}/api/accounts/getAll`, { method: "GET" })
         .then((response) => {
           if (!response.ok) {
             if (response.status === 400) {
@@ -119,7 +120,7 @@ const AccountsDetails = ({ accounts, setAccounts }) => {
         balance: parseFloat(newBalance),
       };
 
-      fetch(`http://localhost:8081/api/accounts/update/${accountId}`, {
+      fetch(`${BASE_URL}/api/accounts/update/${accountId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedAccount),
@@ -155,7 +156,7 @@ const AccountsDetails = ({ accounts, setAccounts }) => {
 
   const handleDelete = (accountId) => {
     if (window.confirm("Are you sure you want to delete this account?")) {
-      fetch(`http://localhost:8081/api/accounts/delete/${accountId}`, {
+      fetch(`${BASE_URL}/api/accounts/delete/${accountId}`, {
         method: "DELETE",
       })
         .then((response) => {
@@ -189,7 +190,7 @@ const AccountsDetails = ({ accounts, setAccounts }) => {
     const amount = window.prompt("Enter amount to deposit: ");
 
     if (amount) {
-      fetch(`http://localhost:8081/api/accounts/deposit/${accountId}`, {
+      fetch(`${BASE_URL}/api/accounts/deposit/${accountId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount: parseFloat(amount) }),
@@ -230,7 +231,7 @@ const AccountsDetails = ({ accounts, setAccounts }) => {
     const amount = window.prompt("Enter amount to withdraw: ");
 
     if (amount) {
-      fetch(`http://localhost:8081/api/accounts/withdraw/${accountId}`, {
+      fetch(`${BASE_URL}/api/accounts/withdraw/${accountId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount: parseFloat(amount) }),
